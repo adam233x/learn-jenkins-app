@@ -35,4 +35,16 @@ pipeline {
             }
         }
     }
+
+    post{
+        always{
+            junit 'test-results/junit.xml'
+        }
+        success{
+            echo 'successful'
+        }
+        failure{
+            echo 'failed'
+        }
+    }
 }
